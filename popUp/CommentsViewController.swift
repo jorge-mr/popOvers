@@ -12,7 +12,7 @@ class CommentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        preferredContentSize = CGSize(width: 100, height: 100)
+        preferredContentSize = CGSize(width: 320, height: 311.5)
     }
 
     override func didReceiveMemoryWarning() {
