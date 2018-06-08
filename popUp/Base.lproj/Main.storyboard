@@ -36,24 +36,46 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oa0-wj-Nbu">
+                                <rect key="frame" x="264" y="845" width="240" height="27"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="RnG-b1-mLp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqO-i1-27H" customClass="SwiftHSVColorPicker" customModule="popUp" customModuleProvider="target">
+                                <rect key="frame" x="264" y="493" width="240" height="288"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UGy-Vm-OlO"/>
+                                    <constraint firstAttribute="height" constant="288" id="kzy-Sa-9yw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hW3-98-MEH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="IFI-ge-N94"/>
+                            <constraint firstItem="PqO-i1-27H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="473" id="K1o-eD-buF"/>
+                            <constraint firstItem="Oa0-wj-Nbu" firstAttribute="trailing" secondItem="PqO-i1-27H" secondAttribute="trailing" id="MRM-38-d5m"/>
                             <constraint firstItem="mgI-ke-XlU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="RYR-5M-nfi"/>
+                            <constraint firstItem="Oa0-wj-Nbu" firstAttribute="top" secondItem="PqO-i1-27H" secondAttribute="bottom" constant="64" id="bkP-sR-kEh"/>
                             <constraint firstItem="mgI-ke-XlU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="iGZ-YV-MuU"/>
+                            <constraint firstItem="PqO-i1-27H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jfS-2c-CNg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hW3-98-MEH" secondAttribute="trailing" constant="40" id="kom-k4-agK"/>
+                            <constraint firstItem="Oa0-wj-Nbu" firstAttribute="leading" secondItem="PqO-i1-27H" secondAttribute="leading" id="uma-dx-5qY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="colorPicker" destination="PqO-i1-27H" id="UEK-x7-cbm"/>
                         <outlet property="colorsButton" destination="mgI-ke-XlU" id="odv-yo-dUG"/>
                         <outlet property="commentsButton" destination="hW3-98-MEH" id="hFk-u9-YRJ"/>
+                        <outlet property="myview" destination="Oa0-wj-Nbu" id="fbG-rJ-AyD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="68"/>
+            <point key="canvasLocation" x="102.34375" y="67.96875"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="ngp-eo-Jgg">
@@ -63,19 +85,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pjG-bE-suw">
-                                <rect key="frame" x="40" y="30" width="240" height="29"/>
-                                <segments>
-                                    <segment title="students"/>
-                                    <segment title="comments"/>
-                                </segments>
-                                <color key="tintColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="didSelectSegmentedControl:" destination="Zm1-wN-FhD" eventType="valueChanged" id="cM1-6a-0Ei"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q9E-Kq-lhW">
-                                <rect key="frame" x="20" y="88" width="280" height="313"/>
+                                <rect key="frame" x="20" y="86" width="280" height="315"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="studentID" id="nls-ON-IJu" customClass="StudentTableViewCell" customModule="popUp" customModuleProvider="target">
@@ -150,38 +161,53 @@
                                     <action selector="didSelectInviteStudent:" destination="Zm1-wN-FhD" eventType="touchUpInside" id="TsT-Za-UVz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-KT-Sgg" customClass="CustomSegmentedControl" customModule="popUp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="66" width="240" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.62352941179999999" green="0.58823529409999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="students,comments"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.62352941179999999" green="0.58823529409999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectorBorderColor">
-                                        <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectorTextColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qq6-OP-mHx">
+                                <rect key="frame" x="35" y="30" width="250" height="26"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-KT-Sgg" customClass="CustomSegmentedControl" customModule="popUp" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="1" width="248" height="24"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.62352941179999999" green="0.58823529409999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="students,comments"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" red="0.62352941179999999" green="0.58823529409999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectorBorderColor">
+                                                <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectorTextColor">
+                                                <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didSelectSegmentedControl:" destination="Zm1-wN-FhD" eventType="valueChanged" id="84Y-UW-yrc"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ZnU-KT-Sgg" secondAttribute="trailing" constant="1" id="Cey-2d-v8B"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZnU-KT-Sgg" secondAttribute="bottom" constant="1" id="U6P-cN-gGh"/>
+                                    <constraint firstItem="ZnU-KT-Sgg" firstAttribute="leading" secondItem="qq6-OP-mHx" secondAttribute="leading" constant="1" id="euA-g9-fSE"/>
+                                    <constraint firstItem="ZnU-KT-Sgg" firstAttribute="top" secondItem="qq6-OP-mHx" secondAttribute="top" constant="1" id="pf2-V5-jSe"/>
+                                    <constraint firstAttribute="height" constant="26" id="rDk-mp-euV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="q7i-hY-9GQ" firstAttribute="bottom" secondItem="a0Y-rY-wHk" secondAttribute="bottom" constant="15" id="JQn-g9-xdz"/>
-                            <constraint firstItem="pjG-bE-suw" firstAttribute="top" secondItem="q7i-hY-9GQ" secondAttribute="top" constant="30" id="YIM-3K-Xu1"/>
-                            <constraint firstItem="q7i-hY-9GQ" firstAttribute="trailing" secondItem="pjG-bE-suw" secondAttribute="trailing" constant="40" id="fhJ-RO-6Ws"/>
-                            <constraint firstItem="Q9E-Kq-lhW" firstAttribute="top" secondItem="pjG-bE-suw" secondAttribute="bottom" constant="30" id="h61-QA-q0s"/>
+                            <constraint firstItem="qq6-OP-mHx" firstAttribute="top" secondItem="q7i-hY-9GQ" secondAttribute="top" constant="30" id="QhO-En-pRK"/>
+                            <constraint firstItem="Q9E-Kq-lhW" firstAttribute="top" secondItem="qq6-OP-mHx" secondAttribute="bottom" constant="30" id="XjU-1G-u8p"/>
+                            <constraint firstItem="qq6-OP-mHx" firstAttribute="leading" secondItem="q7i-hY-9GQ" secondAttribute="leading" constant="35" id="aia-ZE-1qY"/>
+                            <constraint firstItem="q7i-hY-9GQ" firstAttribute="trailing" secondItem="qq6-OP-mHx" secondAttribute="trailing" constant="35" id="auy-DN-N2b"/>
                             <constraint firstItem="Q9E-Kq-lhW" firstAttribute="leading" secondItem="q7i-hY-9GQ" secondAttribute="leading" constant="20" id="hQN-Sc-rYN"/>
                             <constraint firstItem="q7i-hY-9GQ" firstAttribute="trailing" secondItem="Q9E-Kq-lhW" secondAttribute="trailing" constant="20" id="lGa-VJ-yX6"/>
-                            <constraint firstItem="pjG-bE-suw" firstAttribute="leading" secondItem="q7i-hY-9GQ" secondAttribute="leading" constant="40" id="mOi-hu-ykn"/>
                             <constraint firstItem="a0Y-rY-wHk" firstAttribute="top" secondItem="Q9E-Kq-lhW" secondAttribute="bottom" constant="30" id="sv8-L8-zaq"/>
                             <constraint firstItem="a0Y-rY-wHk" firstAttribute="leading" secondItem="q7i-hY-9GQ" secondAttribute="leading" constant="5" id="xAB-yO-Kmz"/>
                             <constraint firstItem="q7i-hY-9GQ" firstAttribute="trailing" secondItem="a0Y-rY-wHk" secondAttribute="trailing" constant="20" id="xJH-a1-zQz"/>

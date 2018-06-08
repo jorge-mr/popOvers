@@ -29,7 +29,8 @@ class CommentsViewController: UIViewController {
     @IBAction func didSelectInviteStudent(_ sender: UIButton) {
     }
     
-    @IBAction func didSelectSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction func didSelectSegmentedControl(_ sender: CustomSegmentedControl) {
+        print(sender.selectedSegmentedIndex)
     }
     
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93285C3720CB046F001EB194 /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93285C3620CB046F001EB194 /* BrightnessView.swift */; };
+		93285C3920CB04AF001EB194 /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93285C3820CB04AF001EB194 /* SwiftHSVColorPicker.swift */; };
+		93285C3B20CB0518001EB194 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93285C3A20CB0518001EB194 /* ColorUtils.swift */; };
+		93285C3D20CB0861001EB194 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93285C3C20CB0861001EB194 /* ColorWheel.swift */; };
 		9332F98F20C73CED0003E3B2 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332F98E20C73CED0003E3B2 /* StudentTableViewCell.swift */; };
 		938C7CB720C874EA00E3307D /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C7CB620C874EA00E3307D /* CustomSegmentedControl.swift */; };
 		93ECBD7E20C6F7940060F7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBD7D20C6F7940060F7B8 /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93285C3620CB046F001EB194 /* BrightnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
+		93285C3820CB04AF001EB194 /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPicker.swift; sourceTree = "<group>"; };
+		93285C3A20CB0518001EB194 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		93285C3C20CB0861001EB194 /* ColorWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 		9332F98E20C73CED0003E3B2 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		938C7CB620C874EA00E3307D /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		93ECBD7A20C6F7940060F7B8 /* popUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +51,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93285C3520CB045E001EB194 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				93285C3620CB046F001EB194 /* BrightnessView.swift */,
+				93285C3820CB04AF001EB194 /* SwiftHSVColorPicker.swift */,
+				93285C3A20CB0518001EB194 /* ColorUtils.swift */,
+				93285C3C20CB0861001EB194 /* ColorWheel.swift */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
 		938C7CB520C874BA00E3307D /* CustomSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +89,7 @@
 		93ECBD7C20C6F7940060F7B8 /* popUp */ = {
 			isa = PBXGroup;
 			children = (
+				93285C3520CB045E001EB194 /* ColorPicker */,
 				938C7CB520C874BA00E3307D /* CustomSegmentedControl */,
 				93ECBD7D20C6F7940060F7B8 /* AppDelegate.swift */,
 				93ECBD7F20C6F7940060F7B8 /* ViewController.swift */,
@@ -155,12 +175,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93285C3B20CB0518001EB194 /* ColorUtils.swift in Sources */,
 				93ECBD8020C6F7940060F7B8 /* ViewController.swift in Sources */,
+				93285C3720CB046F001EB194 /* BrightnessView.swift in Sources */,
 				9332F98F20C73CED0003E3B2 /* StudentTableViewCell.swift in Sources */,
 				93ECBD7E20C6F7940060F7B8 /* AppDelegate.swift in Sources */,
 				93ECBD9220C70C700060F7B8 /* ColorsViewController.swift in Sources */,
 				93ECBD9020C6FC6A0060F7B8 /* CommentsViewController.swift in Sources */,
 				938C7CB720C874EA00E3307D /* CustomSegmentedControl.swift in Sources */,
+				93285C3920CB04AF001EB194 /* SwiftHSVColorPicker.swift in Sources */,
+				93285C3D20CB0861001EB194 /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
